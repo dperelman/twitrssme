@@ -122,10 +122,10 @@ while (my $q = CGI::Fast->new) {
       $title=~s{&nbsp;}{}gi;
       $title=~s{A\[}{A\[$username: }; # yuk, prepend username to title
 
+      # Fix pic.twitter.com links.
+      $body =~ s{href="https://t\.co/[A-Za-z0-9]+">(pic\.twitter\.com/[A-Za-z0-9]+)}{href="https://$1">$1</a>}g;
       # Make links like https://kiza.eu/software/snownews/snowscripts/extensions/script/twitterlinks/source/
-      $body =~ s{(https?://[^>"<  ]+)(?=&#xA0;)}{<a href="$1">$1</a>}g;
-      $body =~ s{(?<!")(https?://[^>"<  ]+)}{<a href="$1">$1</a>}g;
-      $body =~ s{@([a-zA-Z0-9_]*)}{<a href="https://twitter.com/$1">\@$1</a>}g;
+      $body =~ s{@([a-zA-Z0-9_]+)}{<a href="https://twitter.com/$1">\@$1</a>}g;
       $body =~ s{( |^)#([a-zA-Z0-9_&#;]+)}{$1<a href="https://twitter.com/hashtag/$2">#$2</a>}g;
 
       my $uri = $BASEURL . $tweet->findvalue('@data-permalink-path');  
