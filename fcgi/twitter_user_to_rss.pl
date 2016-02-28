@@ -110,7 +110,7 @@ while (my $q = CGI::Fast->new) {
       if($fst_img_a) {
         $fst_img = $fst_img_a->findvalue('@data-image-url');
         if($fst_img) {
-          $body=~s{\]\]>$}{"<img src=\"$fst_img\" width=\"250\" />\]\]>"}e;
+          $body=~s{\]\]>$}{"<img src=\"$fst_img\" />\]\]>"}e;
         }
       }
       my $fullname = $header->findvalue('./strong' . class_contains("fullname"));
