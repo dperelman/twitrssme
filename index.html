@@ -25,7 +25,7 @@
 
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#top" class="nav-link">Get Twitter User RSS</a></li>
+            <li><a href="#top" class="nav-link">Get Twitter RSS</a></li>
             <li><a href="#sponsors" class="nav-link">Sponsors</a></li>
             <!--li><a href="#code" class="nav-link">Get Code</a></li-->
             <li><a href="#about" class="nav-link">About</a></li>
@@ -42,11 +42,19 @@
         <p>
         <form action="/twitter_user_to_rss/" method="get">
           <label for="screen_name">Twitter User:</label><br />
-          @<input name="user" id="screen_name" type="text" class="input" maxlength="140" size="20" value="" placeholder="ciderpunx" /> <br />
-          <label for="replies">With replies?:</label> 
-          <input name="replies" id="replies" type="checkbox" style="margin-left:1.2em" /><br />
-          <label class="hid" for="submit"> &nbsp; </label>
+          @<input name="user" id="screen_name" type="text" class="input" maxlength="140" size="20" value="" placeholder="ciderpunx" /> <br /> <br />
+          <label for="submit" class="hid"> &nbsp; </label>
           <input id="fetch" type="submit" value=" Fetch RSS " class="btn btn-primary btn-lg" />
+        </form>
+        </p>
+        <h2 style="padding-top:2em"><span style="font-weight:900;font-style:normal;font-size:1.8em">OR</span><br /> <br />
+	        <em>Get a twitter "live" search as RSS</em>
+        </h2>
+        <form action="/twitter_search_to_rss/" method="get">
+          <label for="search_term">Twitter Search:</label><br />
+          <input name="term" id="search_term" type="text" class="input" maxlength="140" size="20" value="" placeholder="Your search term" /> <br />
+          <label class="hid" for="submit"> &nbsp; </label><br />
+          <input id="fetch" type="submit" value=" Fetch Search RSS " class="btn btn-primary btn-lg" />
         </form>
         </p>
       </div> <!-- /.container -->
@@ -102,7 +110,7 @@
     <footer>
       <div class="container clearfix">
         <p class="pull-left">
-        &copy; <a href="http://charlieharvey.org.uk">Charlie Harvey</a> 2014-2016. Use it under BY-NC-SA if you want. <a href="https://github.com/ciderpunx/twitrssme">TwitRSS.me code</a> on gitub.
+        Website content &copy; <a href="http://charlieharvey.org.uk">Charlie Harvey</a> 2014-2017. Use it under BY-NC-SA if you want. <a href="https://github.com/ciderpunx/twitrssme">TwitRSS.me code</a> on GitHub (GPLv2 licence).
         </p>
         <p class="pull-right">Template by <a href="http://coverstrap.com">Coverstrap</a>. Mistakes are all my own.
         </p>
