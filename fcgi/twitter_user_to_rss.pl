@@ -132,9 +132,6 @@ while (my $q = CGI::Fast->new) {
       $title=~s{http}{ http}; # links in title lose space
       $title=~s{A\[}{A\[$username: }; # yuk, prepend username to title
 
-      # Make links like https://kiza.eu/software/snownews/snowscripts/extensions/script/twitterlinks/source/
-      $body =~ s{( |^)#([a-zA-Z0-9_&#;]+)}{$1<a href="https://twitter.com/hashtag/$2">#$2</a>}g;
-
       my $uri = $BASEURL . $tweet->findvalue('@data-permalink-path');  
       my $timestamp = $tweet->findnodes('./div/div'
                       . class_contains("stream-item-header")
